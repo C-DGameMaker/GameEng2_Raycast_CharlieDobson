@@ -1,8 +1,10 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class MouseRaycast : MonoBehaviour
 {
+    public TextMeshProUGUI youHitText;
 
     public void RayCastFire()
     {
@@ -10,7 +12,7 @@ public class MouseRaycast : MonoBehaviour
 
         if(Physics.Raycast(cameraRay, out RaycastHit hit))
         {
-            Debug.Log(hit.collider.gameObject.name);
+            youHitText.text = "You Hit:" + " " + hit.collider.gameObject.name.ToString();
         }
     }
 }
